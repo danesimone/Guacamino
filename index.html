@@ -1,12 +1,174 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <title>HOME</title>
-</head>
-<body>
-    <h1>Benvenuto nella HOME</h1>
-    <p>Questa è la pagina principale.</p>
+<meta charset="UTF-8">
+<title>Diario di Guacamino</title>
 
-    <a href="giorno1.html">Vai alla pagina secondaria</a>
+<style>
+body {
+    margin: 0;
+    background-color: #e8f5e9;
+    font-family: "Aptos", "Segoe UI", Calibri, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+h1 {
+    color: #2e7d32;
+    font-size: 32px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #2e7d32;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.entry {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.entry.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.entry.left { left: 0; }
+.entry.right { left: 50%; }
+
+.entry::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 4px solid #2e7d32;
+    top: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    right: -9px;
+}
+
+.entry.right::before { left: -9px; }
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #2e7d32;
+}
+
+.card a {
+    text-decoration: none;
+    background-color: #2e7d32;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background-color: #1b5e20;
+    transform: scale(1.05);
+}
+
+.leaf {
+    position: fixed;
+    font-size: 24px;
+    animation: fall 5s linear forwards;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-50px); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📖 Diario Ufficiale di Guacamino 🥑</h1>
+</header>
+
+<div class="timeline">
+
+    <div class="entry left">
+        <div class="card">
+            <h2>GIORNO 1</h2>
+            <p>Trasferimento ufficiale e primi adattamenti ambientali.</p>
+            <a href="giorno1.html">Leggi</a>
+        </div>
+    </div>
+
+    <div class="entry right">
+        <div class="card">
+            <h2>GIORNO 2</h2>
+            <p>I primi passi verso la carriera da avocado tecnico.</p>
+            <a href="giorno2.html">Leggi</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+const entries = document.querySelectorAll('.entry');
+
+function showOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+    entries.forEach(entry => {
+        const boxTop = entry.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+            entry.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', showOnScroll);
+showOnScroll();
+
+window.addEventListener('scroll', () => {
+    const leaf = document.createElement('div');
+    leaf.classList.add('leaf');
+    leaf.innerHTML = "🍃";
+    leaf.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(leaf);
+    setTimeout(() => { leaf.remove(); }, 5000);
+});
+</script>
+
 </body>
 </html>
