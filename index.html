@@ -2,213 +2,138 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>Diario di Guacamino</title>
+<title>Il Diario di Guacamino 🥑</title>
 
 <style>
 body {
     margin: 0;
-    background-color: #e8f5e9;
+    padding: 0;
     font-family: "Aptos", "Segoe UI", Calibri, sans-serif;
-}
-
-header {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
     text-align: center;
-    padding: 60px 20px 30px;
-    animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Titolo */
 h1 {
-    color: #2e7d32;
-    font-size: 32px;
+    margin-top: 50px;
+    font-size: 42px;
+    color: #2c3e50;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 50px;
+}
+
+/* Timeline orizzontale */
+.timeline-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 40px 20px;
 }
 
 .timeline {
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
     position: relative;
-    max-width: 800px;
-    margin: auto;
-    padding: 40px 0;
 }
 
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 4px;
-    background-color: #2e7d32;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -2px;
-}
-
-.entry {
-    padding: 20px 40px;
-    position: relative;
-    width: 50%;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s ease;
-}
-
-.entry.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.entry.left { left: 0; }
-.entry.right { left: 50%; }
-
-.entry::before {
+/* Linea centrale */
+.timeline::before {
     content: "";
     position: absolute;
-    width: 18px;
-    height: 18px;
-    background-color: white;
-    border: 4px solid #2e7d32;
-    top: 30px;
-    border-radius: 50%;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: #cfd8dc;
+    transform: translateY(-50%);
+    z-index: 0;
+    border-radius: 4px;
+}
+
+/* Giorni */
+.day {
+    position: relative;
     z-index: 1;
-    right: -9px;
-}
-
-.entry.right::before { left: -9px; }
-
-.card {
     background: white;
-    padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.card h2 {
-    margin-top: 0;
-    color: #2e7d32;
-}
-
-.card a {
+    padding: 15px 25px;
+    min-width: 110px;
     text-decoration: none;
-    background-color: #2e7d32;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    display: inline-block;
-    margin-top: 15px;
+    color: #2c3e50;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
 }
 
-.card a:hover {
-    background-color: #1b5e20;
-    transform: scale(1.05);
+.day:hover {
+    transform: translateY(-8px);
+    background: #e8f5e9;
 }
 
-.leaf {
-    position: fixed;
-    font-size: 24px;
-    animation: fall 5s linear forwards;
+/* Ultimo giorno evidenziato */
+.day.latest {
+    background: #ff6f61;
+    color: white;
+    transform: scale(1.1);
 }
 
-@keyframes fall {
-    0% { transform: translateY(-50px); opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
+.day.latest:hover {
+    background: #ff3b2f;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Scrollbar più carina */
+.timeline-container::-webkit-scrollbar {
+    height: 8px;
 }
+
+.timeline-container::-webkit-scrollbar-thumb {
+    background: #b0bec5;
+    border-radius: 4px;
+}
+
+footer {
+    margin: 60px 0 30px 0;
+    color: #888;
+    font-size: 14px;
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>📖 Diario Ufficiale di Guacamino 🥑</h1>
-</header>
+<h1>Il Diario di Guacamino 🥑</h1>
+<p class="subtitle">Cronache vegetali di un nocciolo in evoluzione</p>
 
-<div class="timeline">
+<div class="timeline-container">
+    <div class="timeline">
 
-    <div class="entry left">
-        <div class="card">
-            <h2>GIORNO 1</h2>
-            <p>Trasferimento ufficiale e primi adattamenti ambientali.</p>
-            <a href="giorno1.html">Leggi</a>
-        </div>
-    </div>
+        <a class="day" href="giorno1.html">Giorno 1</a>
+        <a class="day" href="giorno2.html">Giorno 2</a>
+        <a class="day" href="giorno3.html">Giorno 3</a>
+        <a class="day" href="giorno4.html">Giorno 4</a>
+        <a class="day" href="giorno5.html">Giorno 5</a>
+        <a class="day" href="giorno6.html">Giorno 6</a>
+        <a class="day" href="giorno7.html">Giorno 7</a>
+        <a class="day" href="giorno8.html">Giorno 8</a>
+        <a class="day" href="giorno9.html">Giorno 9</a>
+        <a class="day" href="giorno10.html">Giorno 10</a>
+        <a class="day" href="giorno11.html">Giorno 11</a>
+        <a class="day" href="giorno12.html">Giorno 12</a>
+        <a class="day" href="giorno13.html">Giorno 13</a>
+        <a class="day" href="giorno14.html">Giorno 14</a>
+        <a class="day" href="giorno15.html">Giorno 15</a>
+        <a class="day latest" href="giorno16.html">Giorno 16</a>
 
-    <div class="entry right">
-        <div class="card">
-            <h2>GIORNO 2</h2>
-            <p>I primi passi verso la carriera da avocado tecnico.</p>
-            <a href="giorno2.html">Leggi</a>
-        </div>
-    </div>
-
-<div class="entry left">
-    <div class="card">
-        <h2>GIORNO 5</h2>
-        <p>Oscure presenze nell’ufficio. Silenzio e inquietudine.</p>
-        <a href="giorno5.html">Leggi</a>
     </div>
 </div>
 
-<div class="entry right">
-    <div class="card">
-        <h2>GIORNO 6</h2>
-        <p>Notte movimentata e confessioni vegetali.</p>
-        <a href="giorno6.html">Leggi</a>
-    </div>
-</div>
-
-<div class="entry left">
-    <div class="card">
-        <h2>GIORNO 7</h2>
-        <p>Sabotaggio industriale e olio in azione.</p>
-        <a href="giorno7.html">Leggi</a>
-    </div>
-</div>
-
-<div class="entry right">
-    <div class="card">
-        <h2>GIORNO 12</h2>
-        <p>Notte errante tra gli uffici.</p>
-        <a href="giorno12.html">Leggi</a>
-    </div>
-</div>
-
-<div class="entry left">
-    <div class="card">
-        <h2>GIORNO 13</h2>
-        <p>Il germoglio. L’inizio della trasformazione.</p>
-        <a href="giorno13.html">Leggi</a>
-    </div>
-</div>
-
-</div>
-
-<script>
-const entries = document.querySelectorAll('.entry');
-
-function showOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
-    entries.forEach(entry => {
-        const boxTop = entry.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
-            entry.classList.add('visible');
-        }
-    });
-}
-
-window.addEventListener('scroll', showOnScroll);
-showOnScroll();
-
-window.addEventListener('scroll', () => {
-    const leaf = document.createElement('div');
-    leaf.classList.add('leaf');
-    leaf.innerHTML = "🍃";
-    leaf.style.left = Math.random() * 100 + "vw";
-    document.body.appendChild(leaf);
-    setTimeout(() => { leaf.remove(); }, 5000);
-});
-</script>
+<footer>
+© Diario ufficiale di Guacamino 🥑 — Ogni assenza lascia una traccia.
+</footer>
 
 </body>
 </html>
