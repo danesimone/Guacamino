@@ -13,7 +13,7 @@ body {
     text-align: center;
 }
 
-/* Titolo */
+/* Titolo principale */
 h1 {
     margin-top: 50px;
     font-size: 42px;
@@ -23,9 +23,10 @@ h1 {
 .subtitle {
     color: #555;
     margin-bottom: 50px;
+    font-size: 18px;
 }
 
-/* Timeline orizzontale */
+/* Timeline */
 .timeline-container {
     overflow-x: auto;
     white-space: nowrap;
@@ -59,18 +60,33 @@ h1 {
     z-index: 1;
     background: white;
     border-radius: 15px;
-    padding: 15px 25px;
-    min-width: 110px;
+    padding: 18px 25px;
+    min-width: 140px;
     text-decoration: none;
     color: #2c3e50;
-    font-weight: 600;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .day:hover {
     transform: translateY(-8px);
     background: #e8f5e9;
+}
+
+/* Titolo dentro il box */
+.day-title {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* Sottotitolo */
+.day-subtitle {
+    font-size: 12px;
+    color: #777;
+    margin-top: 4px;
 }
 
 /* Ultimo giorno evidenziato */
@@ -80,11 +96,15 @@ h1 {
     transform: scale(1.1);
 }
 
+.day.latest .day-subtitle {
+    color: rgba(255,255,255,0.9);
+}
+
 .day.latest:hover {
     background: #ff3b2f;
 }
 
-/* Scrollbar più carina */
+/* Scrollbar */
 .timeline-container::-webkit-scrollbar {
     height: 8px;
 }
@@ -111,15 +131,50 @@ footer {
 <div class="timeline-container">
     <div class="timeline">
 
-        <a class="day" href="giorno1.html">Giorno 1</a>
-        <a class="day" href="giorno2.html">Giorno 2</a>
-        <a class="day" href="giorno5.html">Giorno 5</a>
-        <a class="day" href="giorno6.html">Giorno 6</a>
-        <a class="day" href="giorno7.html">Giorno 7</a>
-        <a class="day" href="giorno12.html">Giorno 12</a>
-        <a class="day" href="giorno13.html">Giorno 13</a>
-        <a class="day" href="giorno16.html">Giorno 16</a>
-<a class="day latest" href="giorno17.html">Giorno 17</a>
+        <a class="day" href="giorno1.html">
+            <div class="day-title">Giorno 1</div>
+            <div class="day-subtitle">Il risveglio</div>
+        </a>
+
+        <a class="day" href="giorno2.html">
+            <div class="day-title">Giorno 2</div>
+            <div class="day-subtitle">I primi segnali</div>
+        </a>
+
+        <a class="day" href="giorno5.html">
+            <div class="day-title">Giorno 5</div>
+            <div class="day-subtitle">Radici</div>
+        </a>
+
+        <a class="day" href="giorno6.html">
+            <div class="day-title">Giorno 6</div>
+            <div class="day-subtitle">Equilibrio instabile</div>
+        </a>
+
+        <a class="day" href="giorno7.html">
+            <div class="day-title">Giorno 7</div>
+            <div class="day-subtitle">La prima prova</div>
+        </a>
+
+        <a class="day" href="giorno12.html">
+            <div class="day-title">Giorno 12</div>
+            <div class="day-subtitle">La lettera</div>
+        </a>
+
+        <a class="day" href="giorno13.html">
+            <div class="day-title">Giorno 13</div>
+            <div class="day-subtitle">Il cambiamento</div>
+        </a>
+
+        <a class="day" href="giorno16.html">
+            <div class="day-title">Giorno 16</div>
+            <div class="day-subtitle">Nuvole in arrivo</div>
+        </a>
+
+        <a class="day latest" href="giorno17.html">
+            <div class="day-title">Giorno 17</div>
+            <div class="day-subtitle">Il mago del Caos</div>
+        </a>
 
     </div>
 </div>
