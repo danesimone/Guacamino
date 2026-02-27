@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Il Diario di Guacamino 🥑</title>
 
 <style>
@@ -28,25 +29,24 @@ h1 {
 
 /* Timeline */
 .timeline-container {
-    overflow-x: auto;
-    white-space: nowrap;
     padding: 40px 20px;
 }
 
 .timeline {
-    display: inline-flex;
-    align-items: center;
-    gap: 40px;
+    display: flex;
+    flex-wrap: wrap;              /* Va a capo automaticamente */
+    justify-content: center;
+    gap: 30px;
     position: relative;
 }
 
-/* Linea centrale */
+/* Linea centrale (solo desktop) */
 .timeline::before {
     content: "";
     position: absolute;
     top: 50%;
-    left: 0;
-    width: 100%;
+    left: 5%;
+    width: 90%;
     height: 6px;
     background: #cfd8dc;
     transform: translateY(-50%);
@@ -61,7 +61,7 @@ h1 {
     background: white;
     border-radius: 15px;
     padding: 18px 25px;
-    min-width: 140px;
+    min-width: 160px;
     text-decoration: none;
     color: #2c3e50;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -87,13 +87,14 @@ h1 {
     font-size: 12px;
     color: #777;
     margin-top: 4px;
+    text-align: center;
 }
 
 /* Ultimo giorno evidenziato */
 .day.latest {
     background: #ff6f61;
     color: white;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .day.latest .day-subtitle {
@@ -104,14 +105,27 @@ h1 {
     background: #ff3b2f;
 }
 
-/* Scrollbar */
-.timeline-container::-webkit-scrollbar {
-    height: 8px;
-}
+/* Responsive miglioramenti */
+@media (max-width: 768px) {
 
-.timeline-container::-webkit-scrollbar-thumb {
-    background: #b0bec5;
-    border-radius: 4px;
+    h1 {
+        font-size: 30px;
+        margin-top: 30px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .timeline::before {
+        display: none;   /* Nasconde la linea su mobile */
+    }
+
+    .day {
+        min-width: 140px;
+        padding: 15px 18px;
+    }
 }
 
 footer {
@@ -180,7 +194,7 @@ footer {
 </div>
 
 <footer>
-© Diario ufficiale di Guacamino 🥑 — Ogni assenza lascia una traccia.
+© Diario ufficiale di Guacamino 🥑 — Sono tra voi !.
 </footer>
 
 </body>
