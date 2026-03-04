@@ -2,19 +2,82 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>Accesso - Diario di Guacamino</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accesso Riservato</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(160deg, #1f1f1f, #2c3e50);
+    color: white;
+}
+
+.container {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: #ff6f61;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff3b2f;
+}
+
+#message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ffccbc;
+}
+</style>
 </head>
+
 <body>
 
-<h2>Accesso Riservato 🥑</h2>
+<div class="container">
+<h2>Accesso al Diario 🥑</h2>
 
-<input type="email" id="email" placeholder="Email"><br><br>
-<input type="password" id="password" placeholder="Password"><br><br>
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
 
-<button onclick="register()">Registrati</button>
 <button onclick="login()">Login</button>
+<button onclick="register()">Registrati</button>
 
 <p id="message"></p>
+</div>
 
 <script type="module">
 

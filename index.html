@@ -8,235 +8,86 @@
 <style>
 body {
     margin: 0;
-    padding: 0;
-    font-family: "Aptos", "Segoe UI", Calibri, sans-serif;
-    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(160deg, #1f1f1f, #2c3e50);
+    color: white;
     text-align: center;
 }
 
 h1 {
     margin-top: 50px;
     font-size: 42px;
-    color: #2c3e50;
+    letter-spacing: 2px;
 }
 
 .subtitle {
-    color: #555;
+    color: #cfd8dc;
     margin-bottom: 50px;
-    font-size: 18px;
-}
-
-.timeline-container {
-    padding: 40px 20px;
 }
 
 .timeline {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
-    position: relative;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    width: 90%;
-    height: 6px;
-    background: #cfd8dc;
-    transform: translateY(-50%);
-    z-index: 0;
-    border-radius: 4px;
+    gap: 25px;
+    padding: 20px;
 }
 
 .day {
-    position: relative;
-    z-index: 1;
-    background: white;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
     border-radius: 15px;
     padding: 20px;
-    width: 180px;
+    width: 190px;
     text-decoration: none;
-    color: #2c3e50;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: white;
     transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .day:hover {
     transform: translateY(-8px);
-    background: #e8f5e9;
-}
-
-/* MINIATURA */
-.day img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 12px;
-    transition: 0.3s;
-    border: 3px solid #eee;
-}
-
-.day:hover img {
-    transform: scale(1.1);
+    background: rgba(255,255,255,0.15);
 }
 
 .day-title {
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .day-subtitle {
-    font-size: 12px;
-    color: #777;
-    margin-top: 4px;
-    text-align: center;
+    font-size: 13px;
+    color: #b0bec5;
+    margin-top: 5px;
 }
 
-.day.latest {
-    background: #ff6f61;
-    color: white;
-    transform: scale(1.05);
-}
-
-.day.latest .day-subtitle {
-    color: rgba(255,255,255,0.9);
-}
-
-.day.latest img {
-    border: 3px solid white;
-}
-
-.day.latest:hover {
-    background: #ff3b2f;
-}
-
-@media (max-width: 768px) {
-
-    h1 {
-        font-size: 30px;
-        margin-top: 30px;
-    }
-
-    .subtitle {
-        font-size: 15px;
-        margin-bottom: 30px;
-    }
-
-    .timeline::before {
-        display: none;
-    }
-
-    .day {
-        width: 150px;
-        padding: 15px;
-    }
-
-    .day img {
-        width: 60px;
-        height: 60px;
-    }
+.latest {
+    border: 2px solid #ff6f61;
 }
 
 footer {
     margin: 60px 0 30px 0;
-    color: #888;
     font-size: 14px;
+    color: #90a4ae;
+}
+
+button {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    background: #ff6f61;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff3b2f;
 }
 </style>
 </head>
 
 <body>
-
-<h1>Il Diario di Guacamino 🥑</h1>
-<p class="subtitle">Cronache vegetali di un nocciolo in evoluzione</p>
-
-<div class="timeline-container">
-<div class="timeline">
-
-<a class="day" href="giorno1.html">
-    <img src="immagini/fotogiorno1.png" alt="Giorno 1">
-    <div class="day-title">Giorno 1</div>
-    <div class="day-subtitle">Sono qui !</div>
-</a>
-
-<a class="day" href="giorno2.html">
-    <img src="immagini/fotogiorno2.png" alt="Giorno 1">
-    <div class="day-title">Giorno 2</div>
-    <div class="day-subtitle">I primi passi</div>
-</a>
-
-<a class="day" href="giorno5.html">
-    <img src="immagini/fotogiorno5.png" alt="Giorno 1">
-    <div class="day-title">Giorno 5</div>
-    <div class="day-subtitle">Ombre nell’ufficio</div>
-</a>
-
-<a class="day" href="giorno6.html">
-    <img src="immagini/fotogiorno6.png" alt="Giorno 1">
-    <div class="day-title">Giorno 6</div>
-    <div class="day-subtitle">Notte movimentata e confessioni vegetali</div>
-</a>
-
-<a class="day" href="giorno7.html">
-    <img src="immagini/fotogiorno7.png" alt="Giorno 1">
-    <div class="day-title">Giorno 7</div>
-    <div class="day-subtitle">Sabotaggio industriale</div>
-</a>
-
-<a class="day" href="giorno12.html">
-    <img src="immagini/fotogiorno12.png" alt="Giorno 1">
-    <div class="day-title">Giorno 12</div>
-    <div class="day-subtitle">Notte errante tra gli uffici</div>
-</a>
-
-<a class="day" href="giorno13.html">
-    <img src="immagini/fotogiorno13.png" alt="Giorno 1">
-    <div class="day-title">Giorno 13</div>
-    <div class="day-subtitle">Il cambiamento</div>
-</a>
-
-<a class="day" href="giorno16.html">
-    <img src="immagini/fotogiorno16.png" alt="Giorno 1">
-    <div class="day-title">Giorno 16</div>
-    <div class="day-subtitle">Una lettera inaspettata</div>
-</a>
-
-<a class="day" href="giorno17.html">
-    <img src="immagini/fotogiorno17.png" alt="Giorno 1">
-    <div class="day-title">Giorno 17</div>
-    <div class="day-subtitle">Il mago del Caos</div>
-</a>
-
-<a class="day" href="giorno21.html">
-    <img src="immagini/fotogiorno21.png" alt="Giorno 1">
-    <div class="day-title">Giorno 21</div>
-    <div class="day-subtitle">Il duello dell'ora sbagliata</div>
-</a>
-
-<a class="day latest" href="giorno22.html">
-    <img src="immagini/fotogiorno22.png" alt="Giorno 1">
-    <div class="day-title">Giorno 22</div>
-    <div class="day-subtitle">Il taglio che non doveva esserci</div>
-</a>
-
-
-
-
-</div>
-</div>
-
-<footer>
-© Diario ufficiale di Guacamino 🥑 — Sono tra voi !
-</footer>
-
-</body>
 
 <script type="module">
 import { initializeApp } 
@@ -257,14 +108,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Protezione pagina
 onAuthStateChanged(auth, (user) => {
   if (!user) {
     window.location.href = "login.html";
+  } else {
+    document.getElementById("user-email").innerText = user.email;
   }
 });
 
-// Logout
 window.logout = function() {
   signOut(auth).then(() => {
     window.location.href = "login.html";
@@ -272,4 +123,40 @@ window.logout = function() {
 };
 </script>
 
+<h1>Il Diario di Guacamino 🥑</h1>
+<p class="subtitle">Cronache vegetali di un nocciolo in evoluzione</p>
+
+<div class="timeline">
+
+<a class="day" href="giorno1.html">
+    <div class="day-title">Giorno 1</div>
+    <div class="day-subtitle">Sono qui !</div>
+</a>
+
+<a class="day" href="giorno16.html">
+    <div class="day-title">Giorno 16</div>
+    <div class="day-subtitle">Una lettera inaspettata</div>
+</a>
+
+<a class="day" href="giorno17.html">
+    <div class="day-title">Giorno 17</div>
+    <div class="day-subtitle">Il mago del Caos</div>
+</a>
+
+<a class="day latest" href="giorno22.html">
+    <div class="day-title">Giorno 22</div>
+    <div class="day-subtitle">Il taglio che non doveva esserci</div>
+</a>
+
+</div>
+
+<footer>
+Benvenuto, <span id="user-email"></span> 🌿
+<br><br>
+<button onclick="logout()">Logout</button>
+<br><br>
+© Diario ufficiale di Guacamino — Area Riservata
+</footer>
+
+</body>
 </html>
