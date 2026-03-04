@@ -14,7 +14,6 @@ body {
     text-align: center;
 }
 
-/* Titolo principale */
 h1 {
     margin-top: 50px;
     font-size: 42px;
@@ -27,20 +26,18 @@ h1 {
     font-size: 18px;
 }
 
-/* Timeline */
 .timeline-container {
     padding: 40px 20px;
 }
 
 .timeline {
     display: flex;
-    flex-wrap: wrap;              /* Va a capo automaticamente */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     position: relative;
 }
 
-/* Linea centrale (solo desktop) */
 .timeline::before {
     content: "";
     position: absolute;
@@ -54,14 +51,13 @@ h1 {
     border-radius: 4px;
 }
 
-/* Giorni */
 .day {
     position: relative;
     z-index: 1;
     background: white;
     border-radius: 15px;
-    padding: 18px 25px;
-    min-width: 160px;
+    padding: 20px;
+    width: 180px;
     text-decoration: none;
     color: #2c3e50;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -76,13 +72,26 @@ h1 {
     background: #e8f5e9;
 }
 
-/* Titolo dentro il box */
+/* MINIATURA */
+.day img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    transition: 0.3s;
+    border: 3px solid #eee;
+}
+
+.day:hover img {
+    transform: scale(1.1);
+}
+
 .day-title {
     font-weight: 700;
     font-size: 16px;
 }
 
-/* Sottotitolo */
 .day-subtitle {
     font-size: 12px;
     color: #777;
@@ -90,7 +99,6 @@ h1 {
     text-align: center;
 }
 
-/* Ultimo giorno evidenziato */
 .day.latest {
     background: #ff6f61;
     color: white;
@@ -101,11 +109,14 @@ h1 {
     color: rgba(255,255,255,0.9);
 }
 
+.day.latest img {
+    border: 3px solid white;
+}
+
 .day.latest:hover {
     background: #ff3b2f;
 }
 
-/* Responsive miglioramenti */
 @media (max-width: 768px) {
 
     h1 {
@@ -119,12 +130,17 @@ h1 {
     }
 
     .timeline::before {
-        display: none;   /* Nasconde la linea su mobile */
+        display: none;
     }
 
     .day {
-        min-width: 140px;
-        padding: 15px 18px;
+        width: 150px;
+        padding: 15px;
+    }
+
+    .day img {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -133,7 +149,6 @@ footer {
     color: #888;
     font-size: 14px;
 }
-
 </style>
 </head>
 
@@ -143,68 +158,82 @@ footer {
 <p class="subtitle">Cronache vegetali di un nocciolo in evoluzione</p>
 
 <div class="timeline-container">
-    <div class="timeline">
+<div class="timeline">
 
-        <a class="day" href="giorno1.html">
-            <div class="day-title">Giorno 1</div>
-            <div class="day-subtitle">Sono qui !</div>
-        </a>
+<a class="day" href="giorno1.html">
+    <img src="immagini/fotogiorno1.png" alt="Giorno 1">
+    <div class="day-title">Giorno 1</div>
+    <div class="day-subtitle">Sono qui !</div>
+</a>
 
-        <a class="day" href="giorno2.html">
-            <div class="day-title">Giorno 2</div>
-            <div class="day-subtitle">I primi passi</div>
-        </a>
+<a class="day" href="giorno2.html">
+    <img src="immagini/fotogiorno2.png" alt="Giorno 1">
+    <div class="day-title">Giorno 2</div>
+    <div class="day-subtitle">I primi passi</div>
+</a>
 
-        <a class="day" href="giorno5.html">
-            <div class="day-title">Giorno 5</div>
-            <div class="day-subtitle">Ombre nell’ufficio</div>
-        </a>
+<a class="day" href="giorno5.html">
+    <img src="immagini/fotogiorno5.png" alt="Giorno 1">
+    <div class="day-title">Giorno 5</div>
+    <div class="day-subtitle">Ombre nell’ufficio</div>
+</a>
 
-        <a class="day" href="giorno6.html">
-            <div class="day-title">Giorno 6</div>
-            <div class="day-subtitle">Notte movimentata e confessioni vegetali</div>
-        </a>
+<a class="day" href="giorno6.html">
+    <img src="immagini/fotogiorno6.png" alt="Giorno 1">
+    <div class="day-title">Giorno 6</div>
+    <div class="day-subtitle">Notte movimentata e confessioni vegetali</div>
+</a>
 
-        <a class="day" href="giorno7.html">
-            <div class="day-title">Giorno 7</div>
-            <div class="day-subtitle">Sabotaggio industriale</div>
-        </a>
+<a class="day" href="giorno7.html">
+    <img src="immagini/fotogiorno7.png" alt="Giorno 1">
+    <div class="day-title">Giorno 7</div>
+    <div class="day-subtitle">Sabotaggio industriale</div>
+</a>
 
-        <a class="day" href="giorno12.html">
-            <div class="day-title">Giorno 12</div>
-            <div class="day-subtitle">Notte errante tra gli uffici</div>
-        </a>
+<a class="day" href="giorno12.html">
+    <img src="immagini/fotogiorno12.png" alt="Giorno 1">
+    <div class="day-title">Giorno 12</div>
+    <div class="day-subtitle">Notte errante tra gli uffici</div>
+</a>
 
-        <a class="day" href="giorno13.html">
-            <div class="day-title">Giorno 13</div>
-            <div class="day-subtitle">Il cambiamento</div>
-        </a>
+<a class="day" href="giorno13.html">
+    <img src="immagini/fotogiorno13.png" alt="Giorno 1">
+    <div class="day-title">Giorno 13</div>
+    <div class="day-subtitle">Il cambiamento</div>
+</a>
 
-        <a class="day" href="giorno16.html">
-            <div class="day-title">Giorno 16</div>
-            <div class="day-subtitle">Una lettera inaspettata</div>
-        </a>
+<a class="day" href="giorno16.html">
+    <img src="immagini/fotogiorno16.png" alt="Giorno 1">
+    <div class="day-title">Giorno 16</div>
+    <div class="day-subtitle">Una lettera inaspettata</div>
+</a>
 
-        <a class="day" href="giorno17.html">
-            <div class="day-title">Giorno 17</div>
-            <div class="day-subtitle">Il mago del Caos</div>
-        </a>
+<a class="day" href="giorno17.html">
+    <img src="immagini/fotogiorno17.png" alt="Giorno 1">
+    <div class="day-title">Giorno 17</div>
+    <div class="day-subtitle">Il mago del Caos</div>
+</a>
 
-        <a class="day" href="giorno21.html">
-            <div class="day-title">Giorno 21</div>
-            <div class="day-subtitle">Il duello dell'ora sbagliata</div>
-        </a>
+<a class="day" href="giorno21.html">
+    <img src="immagini/fotogiorno21.png" alt="Giorno 1">
+    <div class="day-title">Giorno 21</div>
+    <div class="day-subtitle">Il duello dell'ora sbagliata</div>
+</a>
 
-        <a class="day latest" href="giorno22.html">
-            <div class="day-title">Giorno 22</div>
-            <div class="day-subtitle">Il taglio che non doveva esserci</div>
-        </a>
+<a class="day latest" href="giorno22.html">
+    <img src="immagini/fotogiorno22.png" alt="Giorno 1">
+    <div class="day-title">Giorno 22</div>
+    <div class="day-subtitle">Il taglio che non doveva esserci</div>
+</a>
 
-    </div>
+
+
+
+</div>
 </div>
 
 <footer>
-© Diario ufficiale di Guacamino 🥑 — Sono tra voi !.
+© Diario ufficiale di Guacamino 🥑 — Sono tra voi !
 </footer>
 
 </body>
